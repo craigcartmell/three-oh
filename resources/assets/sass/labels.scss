@@ -1,0 +1,12 @@
+//
+// Labels
+// --------------------------------------------------
+
+.label {
+  margin-right: 5px;
+  font-size: 80%;
+}
+
+.label-secondary {
+  @include label-variant($label-secondary-bg);
+}

@@ -11,6 +11,19 @@ use ThreeOh\Tag;
 
 class ArticleController extends Controller
 {
+
+    /**
+     * Display all articles
+     *
+     * @return View
+     */
+    public function index()
+    {
+        $articles = Article::query()->where('is_published', true)->get();
+
+        return view('articles/index', ['articles' => $articles]);
+    }
+
     /**
      * Get an article by slug
      *
@@ -62,7 +75,7 @@ class ArticleController extends Controller
             $article = Article::query()->findOrFail($id);
         }
 
-        $this->validate($this->request, ['title' => 'required|max:255', 'body' => 'required', 'is_published' => 'boolean']);
+        $this->validate($this->request, ['title' => 'required|max:255', 'body' => 'required', 'tags' => 'required', 'is_published' => 'boolean']);
 
         DB::transaction(function () use ($article) {
             $tags = explode(',', $this->request->input('tags'));

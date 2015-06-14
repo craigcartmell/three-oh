@@ -3,19 +3,36 @@
 namespace ThreeOh\Http\Controllers;
 
 use Illuminate\View\View;
-use ThreeOh\Article;
 
 class IndexController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display the homepage
      *
      * @return View
      */
     public function index()
     {
-        $articles = Article::query()->where('is_published', true)->get();
+        return view('index');
+    }
 
-        return view('index', ['articles' => $articles]);
+    /**
+     * Display the about page
+     *
+     * @return View
+     */
+    public function about()
+    {
+        return view('about');
+    }
+
+    /**
+     * Display the contact page
+     *
+     * @return View
+     */
+    public function contact()
+    {
+        return view('contact');
     }
 }

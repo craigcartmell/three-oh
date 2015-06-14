@@ -1,7 +1,7 @@
 @extends('app')
 
-@section('title', 'Home')
+@section('title', 'Contact')
 
 @section('content')
-    Nothing to see yet
+    Contact
 @endsection

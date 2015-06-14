@@ -3,11 +3,13 @@
 
     <div>
         @foreach($article->tags as $tag)
-            <span class="label label-primary pull-left">{{ $tag->__toString() }}</span>&nbsp;
+            <span class="label label-secondary pull-left">{{ $tag->__toString() }}</span>&nbsp;
         @endforeach
 
         <span class="pull-right text-muted">Published {{ $article->published_at->diffForHumans() }}</span>
     </div>
+
+    <br>
 
     <div>
         @if(!empty($str_limit))

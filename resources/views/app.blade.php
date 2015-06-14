@@ -8,14 +8,26 @@
 </head>
 <body>
 <div class="container">
-    <ul class="nav nav-pills">
-        <li role="presentation" class="active"><a href="/">Home</a></li>
-        <li role="presentation"><a href="#">About</a></li>
-        <li role="presentation"><a href="#">Contact</a></li>
-    </ul>
-    <div class="content">
+    <div class="container-fixed pull-left"><a href="/"><h1>Three Ohhhhhhhhhhhhhh</h1></a></div>
+
+    <nav class="container-fixed pull-right">
+        <ul class="nav nav-pills navbar-default">
+            <li class="{{ Route::current()->getName() === 'home' ? 'active' : '' }}"><a href="{{ route('home') }}">Home</a></li>
+            <li class="{{ str_contains(Route::current()->getName(), 'blog')  ? 'active' : '' }}"><a href="{{ route('blog') }}">Blog</a></li>
+            <li class="{{ Route::current()->getName() === 'about' ? 'active' : '' }}"><a href="{{ route('about') }}">About</a></li>
+            <li class="{{ Route::current()->getName() === 'contact' ? 'active' : '' }}"><a href="{{ route('contact') }}">Contact</a></li>
+        </ul>
+    </nav>
+
+    <br><br><br>
+
+    <div class="container-fixed content">
         @yield('content')
     </div>
+
+    <footer class="text-center text-muted">
+        &copy {{ \Carbon\Carbon::create()->format('Y') }} Three Oh
+    </footer>
 </div>
 </body>
 </html>
