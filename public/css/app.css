@@ -1061,11 +1061,11 @@ textarea {
   line-height: inherit; }
 
 a {
-  color: #4d124c;
+  color: #a089a8;
   text-decoration: none; }
   a:hover,
   a:focus {
-    color: #0f030f;
+    color: #7b6184;
     text-decoration: underline; }
   a:focus {
     outline: thin dotted;
@@ -3043,7 +3043,7 @@ select[multiple].input-lg, .input-group-lg > select[multiple].form-control,
     background-color: #fff; }
 
 .btn-link {
-  color: #4d124c;
+  color: #a089a8;
   font-weight: normal;
   border-radius: 0; }
   .btn-link,
@@ -3060,7 +3060,7 @@ select[multiple].input-lg, .input-group-lg > select[multiple].form-control,
     border-color: transparent; }
   .btn-link:hover,
   .btn-link:focus {
-    color: #0f030f;
+    color: #7b6184;
     text-decoration: underline;
     background-color: transparent; }
   .btn-link[disabled]:hover,
@@ -3562,7 +3562,7 @@ tbody.collapse.in {
   .nav .open > a:hover,
   .nav .open > a:focus {
     background-color: #eeeeee;
-    border-color: #4d124c; }
+    border-color: #a089a8; }
   .nav .nav-divider {
     height: 1px;
     margin: 9.5px 0;
@@ -4121,7 +4121,7 @@ tbody.collapse.in {
       padding: 6px 12px;
       line-height: 1.42857;
       text-decoration: none;
-      color: #4d124c;
+      color: #a089a8;
       background-color: #fff;
       border: 1px solid #ddd;
       margin-left: -1px; }
@@ -4138,7 +4138,7 @@ tbody.collapse.in {
   .pagination > li > a:focus,
   .pagination > li > span:hover,
   .pagination > li > span:focus {
-    color: #0f030f;
+    color: #7b6184;
     background-color: #eeeeee;
     border-color: #ddd; }
   .pagination > .active > a,
@@ -4315,7 +4315,7 @@ a.label:focus {
     padding: 1px 5px; }
   .list-group-item.active > .badge,
   .nav-pills > .active > a > .badge {
-    color: #4d124c;
+    color: #a089a8;
     background-color: #fff; }
   .list-group-item > .badge {
     float: right; }
@@ -4383,7 +4383,7 @@ a.badge:focus {
 a.thumbnail:hover,
 a.thumbnail:focus,
 a.thumbnail.active {
-  border-color: #4d124c; }
+  border-color: #a089a8; }
 
 .alert {
   padding: 15px;

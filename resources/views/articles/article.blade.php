@@ -2,8 +2,27 @@
 
 @section('title', $article->title)
 
+@section('meta')
+    <meta property="og:title" content="{{ $article->title }}">
+    <meta property="og:site_name" content="{{ env('APP_NAME') }}">
+    <meta property="og:url" content="{{ $article->url }}">
+    <meta property="og:description" content="{{ substr(strip_tags($article->body_parsed), 0, 200) }}">
+    <meta property="fb:app_id" content="{{ env('FACEBOOK_APP_ID') }}">
+    <meta property="og:type" content="article">
+    <meta property="article:author" content="">
+    <meta property="article:publisher" content="{{ url() }}">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@craigcartmell1">
+    <meta name="twitter:title" content="{{ $article->title }}">
+    <meta name="twitter:description" content="{{ substr(strip_tags($article->body_parsed), 0, 200) }}">
+    <meta name="twitter:creator" content="@craigcartmell1">
+@endsection
+
 @section('content')
-    @include('partials/article', ['article' => $article])
+    @include('partials/article', ['article' => $article, 'share' => true])
+
+    <br><br><br>
 
     <div id="disqus_thread"></div>
     <script type="text/javascript">

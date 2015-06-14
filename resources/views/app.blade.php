@@ -3,10 +3,32 @@
 <head>
     <title>Three Oh - @yield('title')</title>
 
+    @yield('meta')
+
     <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css">
     <script src="{{ asset('js/app.js') }}" type="text/javascript"></script>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+    <style>
+        .fa {
+            font-size: 30px !important;
+        }
+
+        .fa > a:hover {
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3&appId={{ env('FACEBOOK_APP_ID') }}";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
 <div class="container">
     <div class="container-fixed pull-left"><a href="/"><h1>Three Ohhhhhhhhhhhhhh</h1></a></div>
 
