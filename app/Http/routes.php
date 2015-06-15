@@ -11,16 +11,17 @@
 |
 */
 
-Route::get('/', ['uses' => 'IndexController@index', 'as' => 'home']);
+Route::get('/', function() {
+    return redirect()->route('blog');
+});
 
 Route::group(['prefix' => 'blog'], function () {
     Route::get('/', ['uses' => 'ArticleController@index', 'as' => 'blog']);
-    Route::get('/{slug}', ['uses' => 'ArticleController@getBySlug', 'as' => 'blog.article']);
+    Route::get('{published_at}/{slug}', ['uses' => 'ArticleController@getBySlug', 'as' => 'blog.article']);
 });
 
-
-Route::get('/about', ['uses' => 'IndexController@about', 'as' => 'about']);
-Route::get('/contact', ['uses' => 'IndexController@contact', 'as' => 'contact']);
+Route::get('/contact', ['uses' => 'ContactController@getContact', 'as' => 'contact']);
+Route::post('/contact', ['uses' => 'ContactController@postContact', 'as' => 'contact']);
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::get('/', ['uses' => 'AdminController@index']);

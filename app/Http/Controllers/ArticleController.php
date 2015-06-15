@@ -27,11 +27,12 @@ class ArticleController extends Controller
     /**
      * Get an article by slug
      *
+     * @param string $published_at
      * @param string $slug
      *
      * @return View
      */
-    public function getBySlug($slug = '')
+    public function getBySlug($published_at = '', $slug = '')
     {
         $article = Article::query()->where('slug', $slug)->first();
 

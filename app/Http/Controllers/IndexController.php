@@ -15,24 +15,4 @@ class IndexController extends Controller
     {
         return view('index');
     }
-
-    /**
-     * Display the about page
-     *
-     * @return View
-     */
-    public function about()
-    {
-        return view('about');
-    }
-
-    /**
-     * Display the contact page
-     *
-     * @return View
-     */
-    public function contact()
-    {
-        return view('contact');
-    }
 }

@@ -1,4 +1,4 @@
-<article>
+<article class="container-fluid">
     <h2>
         {{ $article->title }}
         <a href="{{ $article->url }}">
@@ -22,11 +22,15 @@
         @else
             {!! nl2br($article->body_parsed) !!}
         @endif
-    </div>
 
-    <br><br><br>
-    @if(isset($share) && $share)
-        <span class="pull-left">
+
+        <br><br><br>
+
+            <span class="pull-left">
+                <a href="{{ $article->url }}#comments"><i class="fa fa-comment"></i> Leave a comment</a>
+            </span>
+
+            <span class="pull-right">
             <a href="http://www.facebook.com/share.php?u={{ $article->url }}&title={{ $article->title }}"
                target="_blank">
                 <i class="fa fa-facebook-official"></i>
@@ -44,6 +48,7 @@
                 <i class="fa fa-reddit"></i>
             </a>
         </span>
-    @endif
+
+    </div>
 
 </article>

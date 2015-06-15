@@ -52,7 +52,7 @@ class Article extends Model
 
     public function getUrlAttribute()
     {
-        return url('blog/' . $this->slug);
+        return url('blog/' . $this->published_at->format('Y-m-d') . '/' . $this->slug);
     }
 
     public function getBodyParsedAttribute()

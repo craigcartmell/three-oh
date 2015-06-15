@@ -24,6 +24,7 @@
 
     <br><br><br>
 
+    <a id="comments"></a>
     <div id="disqus_thread"></div>
     <script type="text/javascript">
         /* * * CONFIGURATION VARIABLES * * */
