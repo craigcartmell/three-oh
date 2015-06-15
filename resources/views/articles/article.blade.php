@@ -1,6 +1,6 @@
 @extends('app')
 
-@section('title', '')
+@section('title', $article->title)
 
 @section('meta')
     <meta property="og:title" content="{{ $article->title }}">
@@ -20,7 +20,7 @@
 @endsection
 
 @section('content')
-    @include('partials/article', ['article' => $article, 'share' => true])
+    @include('partials/article', ['article' => $article, 'hide_title' => true])
 
     <br><br><br>
 
