@@ -21,8 +21,8 @@
         {!! csrf_field() !!}
 
         <div class="container-fixed">
-            <label for="message"></label>
-            <textarea id="message" name="message" class="form-control" placeholder="Don't be shy, write a few words...">{{ old('message') }}</textarea>
+            <label for="body"></label>
+            <textarea id="body" name="body" class="form-control" placeholder="Don't be shy, write a few words...">{{ old('body') }}</textarea>
         </div>
 
         <br>

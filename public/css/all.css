@@ -1065,8 +1065,8 @@ a {
   text-decoration: none; }
   a:hover,
   a:focus {
-    color: #4d124c;
-    text-decoration: underline; }
+    color: #6d5675;
+    text-decoration: none; }
   a:focus {
     outline: thin dotted;
     outline: 5px auto -webkit-focus-ring-color;
@@ -3060,8 +3060,8 @@ select[multiple].input-lg, .input-group-lg > select[multiple].form-control,
     border-color: transparent; }
   .btn-link:hover,
   .btn-link:focus {
-    color: #4d124c;
-    text-decoration: underline;
+    color: #6d5675;
+    text-decoration: none;
     background-color: transparent; }
   .btn-link[disabled]:hover,
   .btn-link[disabled]:focus,
@@ -4138,7 +4138,7 @@ tbody.collapse.in {
   .pagination > li > a:focus,
   .pagination > li > span:hover,
   .pagination > li > span:focus {
-    color: #4d124c;
+    color: #6d5675;
     background-color: #eeeeee;
     border-color: #ddd; }
   .pagination > .active > a,
@@ -5802,8 +5802,13 @@ body {
 
 article {
   margin-bottom: 40px;
-  padding: 1px 10px;
-  border-bottom: 1px solid #CCC;
-  background-color: #f8f8f8; }
+  padding: 1px 10px; }
+  article > div.container-fluid {
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #CCC;
+    padding: 10px; }
 
-/*# sourceMappingURL=app.css.map */
+#body.form-control {
+  height: 200px; }
+
+/*# sourceMappingURL=all.css.map */

@@ -1,6 +1,6 @@
 @extends('app')
 
-@section('title', $article->title)
+@section('title', '')
 
 @section('meta')
     <meta property="og:title" content="{{ $article->title }}">

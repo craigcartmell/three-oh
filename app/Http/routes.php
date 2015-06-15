@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', function() {
+Route::get('/', function () {
     return redirect()->route('blog');
 });
 
@@ -24,10 +24,11 @@ Route::get('/contact', ['uses' => 'ContactController@getContact', 'as' => 'conta
 Route::post('/contact', ['uses' => 'ContactController@postContact', 'as' => 'contact']);
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
-    Route::get('/', ['uses' => 'AdminController@index']);
+    Route::get('/', ['uses' => 'AdminController@index', 'as' => 'admin']);
     Route::group(['prefix' => 'articles'], function () {
         Route::get('/{id}', ['uses' => 'ArticleController@getEdit']);
         Route::post('/{id}', ['uses' => 'ArticleController@postEdit']);
+        Route::get('/{id}/delete', ['uses' => 'ArticleController@getDelete']);
     });
 });
 

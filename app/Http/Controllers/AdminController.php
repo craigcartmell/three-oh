@@ -3,6 +3,7 @@
 namespace ThreeOh\Http\Controllers;
 
 use Illuminate\View\View;
+use ThreeOh\Article;
 
 class AdminController extends Controller
 {
@@ -13,6 +14,8 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('admin/index');
+        $articles = Article::all();
+
+        return view('admin/index', ['articles' => $articles]);
     }
 }

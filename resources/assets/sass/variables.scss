@@ -8,3 +8,7 @@ $font-family-sans-serif:  Trajan;
 $font-size-base:          15px !default;
 
 $gray-lightest: #f8f8f8 !default;
+
+$link-hover-color:      darken($brand-secondary, 20%) !default;
+
+$link-hover-decoration: none !default;

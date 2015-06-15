@@ -19,7 +19,7 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        $articles = Article::query()->where('is_published', true)->get();
+        $articles = Article::query()->where('is_published', true)->orderBy('id', 'desc')->get();
 
         return view('articles/index', ['articles' => $articles]);
     }
@@ -126,5 +126,25 @@ class ArticleController extends Controller
         });
 
         return redirect()->to('/admin');
+    }
+
+    /**
+     * Delete an article
+     *
+     * @param int $id
+     *
+     * @return View
+     */
+    public function getDelete($id = 0)
+    {
+        $article = new Article();
+
+        if (intval($id)) {
+            $article = Article::query()->findOrFail($id);
+        }
+
+        $article->delete();
+
+        return redirect()->route('admin');
     }
 }

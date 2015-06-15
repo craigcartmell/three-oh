@@ -1,6 +1,10 @@
 article {
   margin-bottom: 40px;
   padding: 1px 10px;
-  border-bottom: 1px solid #CCC;
-  background-color: $gray-lightest;
+
+  > div.container-fluid {
+    background-color: $gray-lightest;
+    border-bottom: 1px solid #CCC;
+    padding: 10px;
+  }
 }

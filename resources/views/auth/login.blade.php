@@ -7,10 +7,25 @@
     <form id="login" name="login" method="post">
         {!! csrf_field() !!}
 
-        <label for="email">Email:</label> <input type="text" id="email" name="email" value="{{ old('email') }}">
-        <label for="password">Password:</label><input type="password" id="password" name="password" value="">
-        <label for="remember">Remember Me?</label> <input type="checkbox" id="remember" name="remember" value="1">
+        <div>
+            <label for="email" class="label label-primary">Email:</label> <input type="text" id="email" name="email" value="{{ old('email') }}" class="form-control">
+        </div>
 
-        <input type="submit" id="submit" name="submit" value="Login">
+        <br>
+
+        <div>
+            <label for="password" class="label label-primary">Password:</label><input type="password" id="password" name="password" value="" class="form-control">
+        </div>
+
+        <br>
+
+        <div>
+            <label for="remember" class="label label-primary">Remember Me?</label> <input type="checkbox" id="remember" name="remember" value="1">
+        </div>
+
+        <br>
+        <div>
+            <input type="submit" id="submit" name="submit" value="Login" class="btn btn-primary">
+        </div>
     </form>
 @endsection

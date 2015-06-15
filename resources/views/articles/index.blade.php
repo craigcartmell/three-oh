@@ -1,12 +1,8 @@
 @extends('app')
 
-@section('title', 'Words and that...')
+@section('title', 'Words and things...')
 
 @section('content')
-    <div class="alert alert-info">
-        Seen anything interesting? Feel free to comment and share. Alternatively, you can drop me an email <a href="{{ route('contact') }}">here</a>.
-    </div>
-
     @forelse($articles as $article)
         @include('partials/article', ['article' => $article, 'str_limit' => 200])
     @empty

@@ -1,5 +1,6 @@
 @import "variables";
-@import "../../../vendor/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap";
+@import "../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 @import "normalize";
 @import "labels";
 @import "articles";
+@import "pages/contact";
