@@ -33,8 +33,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
 });
 
 Route::group(['prefix' => 'auth'], function () {
-    Route::get('login', ['uses' => 'Auth\AuthController@getLogin']);
+    Route::get('login', ['uses' => 'Auth\AuthController@getLogin', 'as' => 'login']);
     Route::post('login', ['uses' => 'Auth\AuthController@postLogin']);
-    Route::get('logout', 'Auth\AuthController@getLogout');
+    Route::get('logout', ['uses' => 'Auth\AuthController@getLogout', 'as' => 'logout']);
 });
 

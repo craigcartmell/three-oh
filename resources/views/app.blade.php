@@ -76,6 +76,11 @@
                             href="{{ route('blog') }}">Blog</a></li>
                 <li class="{{ Route::current()->getName() === 'contact' ? 'active' : '' }}"><a
                             href="{{ route('contact') }}">Contact</a></li>
+                @if(auth()->check())
+                    <li class="{{ str_contains(Route::current()->getName(), 'admin') ? 'active' : '' }}"><a
+                                href="{{ route('admin') }}">Admin</a></li>
+                    <li><a href="{{ route('logout') }}">Logout</a></li>
+                @endif
             </ul>
         </div>
     </nav>

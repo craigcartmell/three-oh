@@ -5801,8 +5801,7 @@ body {
     background-color: #886c92; }
 
 article {
-  margin-bottom: 40px;
-  padding: 1px 10px; }
+  margin-bottom: 40px; }
   article > div.container-fluid {
     background-color: #f8f8f8;
     border-bottom: 1px solid #CCC;
