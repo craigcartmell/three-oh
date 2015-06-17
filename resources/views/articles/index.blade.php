@@ -4,8 +4,14 @@
 
 @section('content')
     @forelse($articles as $article)
-        @include('partials/article', ['article' => $article, 'str_limit' => 200])
+        @include('partials/article', ['article' => $article])
     @empty
-        <div class="alert alert-info">Nothing to see here :(<div>
+        <p>Will be appearing here shortly. Stay tuned...</p>
     @endforelse
+
+    <script type="text/javascript">
+        $(function() {
+            $('.background-overlay').hide().fadeIn(2000);
+        });
+    </script>
 @endsection

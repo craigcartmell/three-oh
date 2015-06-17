@@ -23,10 +23,9 @@
         }
     </style>
 
-    <link rel="stylesheet" href="{{ asset('css/prettify.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('css/prism.css') }}" type="text/css">
 
     <script src="{{ elixir('js/app.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('js/prettify.js') }}" type="text/javascript"></script>
 
     <script src="https://www.google.com/recaptcha/api.js"></script>
 
@@ -65,34 +64,40 @@
     @endif
 </head>
 <body>
-<div id="fb-root"></div>
+<script src="{{ asset('js/prism.js') }}"></script>
+
+<div class="background-overlay"></div>
 
 <div class="container">
-    <nav class="navbar navbar-default">
-        <div class="container-fixed">
-            <ul class="nav navbar-nav">
-                <li class=""><a href="{{ route('blog') }}">Three Oh</a></li>
-                <li class="{{ str_contains(Route::current()->getName(), 'blog')  ? 'active' : '' }}"><a
-                            href="{{ route('blog') }}">Blog</a></li>
-                <li class="{{ Route::current()->getName() === 'contact' ? 'active' : '' }}"><a
-                            href="{{ route('contact') }}">Contact</a></li>
-                @if(auth()->check())
-                    <li class="{{ str_contains(Route::current()->getName(), 'admin') ? 'active' : '' }}"><a
-                                href="{{ route('admin') }}">Admin</a></li>
-                    <li><a href="{{ route('logout') }}">Logout</a></li>
-                @endif
-            </ul>
+    <div class="container-fixed container-fixed-main">
+        <nav class="navbar navbar-default">
+            <div class="container-fixed">
+                <ul class="nav navbar-nav">
+                    <li class=""><a href="{{ route('blog') }}">Three Oh</a></li>
+                    <li class="{{ Route::current() && str_contains(Route::current()->getName(), 'blog')  ? 'active' : '' }}">
+                        <a
+                                href="{{ route('blog') }}">Blog</a></li>
+                    <li class="{{ Route::current() && Route::current()->getName() === 'contact' ? 'active' : '' }}"><a
+                                href="{{ route('contact') }}">Contact</a></li>
+                    @if(auth()->check())
+                        <li class="{{ Route::current() && str_contains(Route::current()->getName(), 'admin') ? 'active' : '' }}">
+                            <a
+                                    href="{{ route('admin') }}">Admin</a></li>
+                        <li><a href="{{ route('logout') }}">Logout</a></li>
+                    @endif
+                </ul>
+            </div>
+        </nav>
+
+        <div class="container-fixed content">
+            <h1>@yield('title')</h1>
+            @yield('content')
         </div>
-    </nav>
 
-    <div class="container-fixed content">
-        <h1>@yield('title')</h1>
-        @yield('content')
+        <footer class="text-center text-muted">
+            &copy {{ \Carbon\Carbon::create()->format('Y') }} Three Oh Limited
+        </footer>
     </div>
-
-    <footer class="text-center text-muted">
-        &copy {{ \Carbon\Carbon::create()->format('Y') }} Three Oh Limited
-    </footer>
 </div>
 </body>
 </html>

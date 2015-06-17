@@ -1,7 +1,7 @@
 @extends('app')
 
-@section('title', 'Not Found')
+@section('title', 'Three uh-Oh')
 
 @section('content')
-    <div class="alert alert-danger">Uh oh, nothing to see here. :(<div>
+    <p>Are you lost? You seem lost.<p>
 @endsection
