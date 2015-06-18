@@ -19,6 +19,8 @@
     <meta name="twitter:creator" content="{{ env('TWITTER_HANDLE') }}">
 @endsection
 
+@section('meta_keywords', $article->tags_delimited)
+
 @section('content')
     @include('partials/article', ['article' => $article, 'hide_title' => true])
 

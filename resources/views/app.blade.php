@@ -5,7 +5,7 @@
 
     <meta charset="UTF-8">
     <meta name="description" content="Three Oh - All things Web Development">
-    <meta name="keywords" content="three, oh, web, dev, development, php, laravel, laravel 5, coding, code">
+    <meta name="keywords" content="three, oh, web, dev, development, php, laravel, laravel 5, coding, code, @yield('meta_keywords')">
     <meta name="author" content="Three Oh Limited">
 
     @yield('meta')

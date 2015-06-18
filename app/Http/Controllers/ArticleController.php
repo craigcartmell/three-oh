@@ -125,7 +125,7 @@ class ArticleController extends Controller
             $article->tags()->saveMany($article_tags);
         });
 
-        return redirect()->to('/admin');
+        return view('articles/edit', ['article' => $article]);
     }
 
     /**
