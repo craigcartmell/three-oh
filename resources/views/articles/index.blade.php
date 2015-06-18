@@ -9,11 +9,3 @@
         <p>Will be appearing here shortly. Stay tuned...</p>
     @endforelse
 @endsection
-
-@section('scripts')
-    <script type="text/javascript">
-        $(function() {
-            $('.background-overlay').hide().fadeIn(2000);
-        });
-    </script>
-@endsection

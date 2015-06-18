@@ -47,7 +47,7 @@
 
         <script type="text/javascript">
             var _gaq = _gaq || [];
-            _gaq.push(['_setAccount', {{ env('GA_ID') }}]);
+            _gaq.push(['_setAccount', '{{ env('GA_ID') }}']);
             _gaq.push(['_trackPageview']);
 
             (function () {
@@ -61,7 +61,7 @@
         </script>
     @endif
 </head>
-<body>
+<body data-site-url="{{ url() }}">
 <div class="background-overlay"></div>
 
 <div class="container">

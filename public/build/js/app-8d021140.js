@@ -11528,6 +11528,8 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 $(function () {
+    var siteUrl = $('body').data('site-url');
+
     $('.share').on('click', function (e) {
         e.preventDefault();
 
@@ -11541,7 +11543,7 @@ $(function () {
         popupwindow(url, '', 800, 800);
     });
 
-    $('.delete').on('click', function() {
+    $('.delete').on('click', function () {
         return confirm('Are you sure you wish to delete this?');
     });
 
@@ -11555,5 +11557,13 @@ $(function () {
     }
 
     $('pre').addClass('line-numbers');
+
+    var c = new Image();
+
+    c.onload = function () {
+        $('.background-overlay').css('background-image', "url('" + siteUrl + "/images/background.jpg')").fadeIn(2000);
+    };
+
+    c.src = siteUrl + '/images/background.jpg';
 });
 //# sourceMappingURL=app.js.map
