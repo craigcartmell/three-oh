@@ -19,7 +19,7 @@
             </span>
         </div>
 
-        <br><br>
+        <br>
 
         <div>
             @if(!empty($str_limit))
