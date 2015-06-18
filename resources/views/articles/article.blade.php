@@ -13,10 +13,10 @@
     <meta property="article:publisher" content="{{ url() }}">
 
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="@craigcartmell1">
+    <meta name="twitter:site" content="{{ env('TWITTER_HANDLE') }}">
     <meta name="twitter:title" content="{{ $article->title }}">
     <meta name="twitter:description" content="{{ substr(strip_tags($article->body_parsed), 0, 200) }}">
-    <meta name="twitter:creator" content="@craigcartmell1">
+    <meta name="twitter:creator" content="{{ env('TWITTER_HANDLE') }}">
 @endsection
 
 @section('content')

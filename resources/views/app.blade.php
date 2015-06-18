@@ -25,8 +25,6 @@
 
     <link rel="stylesheet" href="{{ asset('css/prism.css') }}" type="text/css">
 
-    <script src="{{ elixir('js/app.js') }}" type="text/javascript"></script>
-
     <script src="https://www.google.com/recaptcha/api.js"></script>
 
     @if(app()->environment() === 'production')
@@ -64,8 +62,6 @@
     @endif
 </head>
 <body>
-<script src="{{ asset('js/prism.js') }}"></script>
-
 <div class="background-overlay"></div>
 
 <div class="container">
@@ -75,14 +71,12 @@
                 <ul class="nav navbar-nav">
                     <li class=""><a href="{{ route('blog') }}">Three Oh</a></li>
                     <li class="{{ Route::current() && str_contains(Route::current()->getName(), 'blog')  ? 'active' : '' }}">
-                        <a
-                                href="{{ route('blog') }}">Blog</a></li>
+                        <a href="{{ route('blog') }}">Blog</a></li>
                     <li class="{{ Route::current() && Route::current()->getName() === 'contact' ? 'active' : '' }}"><a
                                 href="{{ route('contact') }}">Contact</a></li>
                     @if(auth()->check())
                         <li class="{{ Route::current() && str_contains(Route::current()->getName(), 'admin') ? 'active' : '' }}">
-                            <a
-                                    href="{{ route('admin') }}">Admin</a></li>
+                            <a href="{{ route('admin') }}">Admin</a></li>
                         <li><a href="{{ route('logout') }}">Logout</a></li>
                     @endif
                 </ul>
@@ -99,5 +93,11 @@
         </footer>
     </div>
 </div>
+
+<script src="{{ elixir('js/app.js') }}" type="text/javascript"></script>
+<script src="{{ asset('js/prism.js') }}"></script>
+
+@yield('scripts')
+
 </body>
 </html>
