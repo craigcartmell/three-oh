@@ -94,7 +94,8 @@
     <br>
 
     <footer class="text-center text-muted">
-        &copy {{ \Carbon\Carbon::create()->format('Y') }} Three Oh Limited
+        <span>&copy {{ \Carbon\Carbon::create()->format('Y') }} Three Oh Limited</span>
+        <span><a href="https://twitter.com/three_oh_web" title="Follow @three_oh_web on Twitter"><i class="fa fa-twitter"></i></a></span>
     </footer>
 </div>
 
