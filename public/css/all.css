@@ -5790,6 +5790,10 @@ button.close {
 body {
   margin: 10px; }
 
+a {
+  background-color: transparent;
+  font-weight: bold; }
+
 .label {
   margin-right: 5px;
   font-size: 80%; }
