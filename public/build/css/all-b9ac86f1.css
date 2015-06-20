@@ -5818,7 +5818,8 @@ article {
   left: 0;
   z-index: -1;
   background-size: 100% 100%;
-  display: none; }
+  background-color: #f8f8f8;
+  display: block; }
 
 .container-fixed-main {
   background-color: #fff;
@@ -5827,8 +5828,8 @@ article {
 
 .logo {
   background: url("../../../images/logo.png") no-repeat;
-  background-size: 250px;
-  width: 250px;
+  background-size: 230px;
+  width: 230px;
   height: 100px;
   margin: 8px; }
 
