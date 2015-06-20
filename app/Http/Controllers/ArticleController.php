@@ -40,6 +40,10 @@ class ArticleController extends Controller
             return view('errors/404');
         }
 
+        if (! $article->is_published && ! $this->auth->check()) {
+            return view('errors/404');
+        }
+
         return view('articles/article', ['article' => $article]);
     }
 

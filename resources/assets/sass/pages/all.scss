@@ -14,3 +14,11 @@
   padding: 12px;
   border: 1px solid $gray-lighter;
 }
+
+.logo {
+  background: url('../../../images/logo.png') no-repeat;
+  background-size: 250px;
+  width: 250px;
+  height: 100px;
+  margin: 8px;
+}

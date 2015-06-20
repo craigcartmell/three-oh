@@ -5,8 +5,10 @@
 
     <meta charset="UTF-8">
     <meta name="description" content="Three Oh - All things Web Development">
-    <meta name="keywords" content="three, oh, web, dev, development, php, laravel, laravel 5, coding, code, @yield('meta_keywords')">
+    <meta name="keywords"
+          content="three, oh, web, dev, development, php, laravel, laravel 5, coding, code, @yield('meta_keywords')">
     <meta name="author" content="Three Oh Limited">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
     @yield('meta')
 
@@ -68,8 +70,8 @@
     <div class="container-fixed container-fixed-main">
         <nav class="navbar navbar-default">
             <div class="container-fixed">
-                <ul class="nav navbar-nav">
-                    <li class=""><a href="{{ route('blog') }}">Three Oh</a></li>
+                <a href="{{ route('blog') }}"><div class="logo pull-left"></div></a>
+                <ul class="nav navbar-nav pull-right">
                     <li class="{{ Route::current() && str_contains(Route::current()->getName(), 'blog')  ? 'active' : '' }}">
                         <a href="{{ route('blog') }}">Blog</a></li>
                     <li class="{{ Route::current() && Route::current()->getName() === 'contact' ? 'active' : '' }}"><a

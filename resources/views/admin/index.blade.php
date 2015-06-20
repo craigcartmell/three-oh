@@ -26,6 +26,7 @@
                     <td>{{$article->published_at}}</td>
                     <td>{{$article->created_at}}</td>
                     <td>{{$article->updated_at}}</td>
+                    <td><a href="{{ $article->url }}" class="btn btn-success">View</a></td>
                     <td><a href="/admin/articles/{{ $article->getKey() }}" class="btn btn-primary">Edit</a></td>
                     <td><a href="/admin/articles/{{ $article->getKey() }}/delete" class="btn btn-danger delete">Delete</a></td>
                 </tr>

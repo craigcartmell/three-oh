@@ -5,10 +5,16 @@ $label-secondary-bg:             $brand-secondary;
 
 $font-family-sans-serif:  Trajan;
 
-$font-size-base:          16px !default;
+$font-size-base:          17px !default;
 
 $gray-lightest: #f8f8f8 !default;
 
 $link-hover-color:      darken($brand-secondary, 20%) !default;
 
 $link-hover-decoration: none !default;
+
+$navbar-default-bg: $brand-primary;
+$navbar-default-link-color: #fff;
+$navbar-default-link-hover-bg: darken($navbar-default-bg, 6.5%) !default;
+$navbar-default-link-hover-color: #fff;
+$navbar-default-link-active-color: #fff;
