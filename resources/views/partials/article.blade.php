@@ -14,7 +14,8 @@
                 <span class="label label-secondary pull-left">{{ $tag->__toString() }}</span>&nbsp;
             @endforeach
 
-            <span class="pull-right text-muted">Published {{ $article->published_at->format('jS F Y') }} and
+            <span class="pull-right text-muted">
+                {{ (!empty($article->published_at) ? 'Published ' . $article->published_at->format('jS F Y') . ' and ' : '') }}
                 last updated {{ $article->updated_at->diffForHumans() }}
             </span>
         </div>
@@ -59,7 +60,7 @@
                        title="Share on Reddit">
                         <i class="fa fa-reddit"></i>
                     </a>
-                 </div>
+                </div>
             </div>
 
         </div>
