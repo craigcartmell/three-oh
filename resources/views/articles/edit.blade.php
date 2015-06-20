@@ -8,12 +8,16 @@
         {!! csrf_field() !!}
 
         <div>
+            <input type="submit" name="submit" value="Save" class="btn btn-primary">
+        </div>
+
+        <br>
+        <div>
             <label for="title" class="label label-primary">Title:</label>
             <input type="text" id="title" name="title" value="{{ old('title', $article->title) }}" placeholder="A new blog post..." class="form-control">
         </div>
 
         <br>
-
         <div>
             <label for="body" class="label label-primary">Body:</label>
             <textarea id="body" name="body" placeholder="Say something..." class="form-control">{{ old('body', $article->body) }}</textarea>
@@ -33,7 +37,7 @@
 
         <br>
         <div>
-            <input type="submit" id="submit" name="submit" value="Save" class="btn btn-primary">
+            <input type="submit" name="submit" value="Save" class="btn btn-primary">
         </div>
 
     </form>
