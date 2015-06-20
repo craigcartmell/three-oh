@@ -8,7 +8,7 @@
         </h2>
     @endif
 
-    <div class="container-fluid">
+    <div class="container-main">
         <div>
             @foreach($article->tags as $tag)
                 <span class="label label-secondary pull-left">{{ $tag->__toString() }}</span>&nbsp;
@@ -30,35 +30,37 @@
                 {!! nl2br($article->body_parsed) !!}
             @endif
 
+            <br>
 
-            <br><br><br>
+            <div>
+                <div class="pull-left">
+                    <a href="{{ $article->url }}#comments"><i class="fa fa-comment"></i> Leave a comment</a>
+                </div>
 
-            <span class="pull-left">
-                <a href="{{ $article->url }}#comments"><i class="fa fa-comment"></i> Leave a comment</a>
-            </span>
+                <div class="pull-right">
+                    <a href="#" class="share" data-type="facebook"
+                       data-url="http://www.facebook.com/share.php?u={{ $article->url }}&title={{ $article->title }}"
+                       target="_blank" title="Share on Facebook">
+                        <i class="fa fa-facebook-official"></i>
+                    </a>
 
-            <span class="pull-right">
-                <a href="#" class="share" data-type="facebook"
-                   data-url="http://www.facebook.com/share.php?u={{ $article->url }}&title={{ $article->title }}"
-                   target="_blank" title="Share on Facebook">
-                    <i class="fa fa-facebook-official"></i>
-                </a>
+                    <a href="#" class="share" data-type="twitter"
+                       data-url="https://twitter.com/intent/tweet?url={{ $article->url }}" title="Share on Twitter">
+                        <i class="fa fa-twitter"></i>
+                    </a>
 
-                <a href="#" class="share" data-type="twitter"
-                   data-url="https://twitter.com/intent/tweet?url={{ $article->url }}" title="Share on Twitter">
-                    <i class="fa fa-twitter"></i>
-                </a>
+                    <a href="#" class="share" data-type="google-plus"
+                       data-url="https://plus.google.com/share?url={{ $article->url }}" title="Share on Google+">
+                        <i class="fa fa-google-plus"></i>
+                    </a>
 
-                <a href="#" class="share" data-type="google-plus"
-                   data-url="https://plus.google.com/share?url={{ $article->url }}" title="Share on Google+">
-                    <i class="fa fa-google-plus"></i>
-                </a>
-
-                <a href="#" class="share" data-type="reddit" data-url="//www.reddit.com/submit?url={{ $article->url }}"
-                   title="Share on Reddit">
-                    <i class="fa fa-reddit"></i>
-                </a>
-             </span>
+                    <a href="#" class="share" data-type="reddit"
+                       data-url="//www.reddit.com/submit?url={{ $article->url }}"
+                       title="Share on Reddit">
+                        <i class="fa fa-reddit"></i>
+                    </a>
+                 </div>
+            </div>
 
         </div>
     </div>

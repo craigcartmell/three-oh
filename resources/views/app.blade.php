@@ -66,34 +66,34 @@
 <body data-site-url="{{ url() }}">
 <div class="background-overlay"></div>
 
-<div class="container">
-    <div class="container-fixed container-fixed-main">
-        <nav class="navbar navbar-default">
-            <div class="container-fixed">
-                <a href="{{ route('blog') }}"><div class="logo pull-left"></div></a>
-                <ul class="nav navbar-nav pull-right">
-                    <li class="{{ Route::current() && str_contains(Route::current()->getName(), 'blog')  ? 'active' : '' }}">
-                        <a href="{{ route('blog') }}">Blog</a></li>
-                    <li class="{{ Route::current() && Route::current()->getName() === 'contact' ? 'active' : '' }}"><a
-                                href="{{ route('contact') }}">Contact</a></li>
-                    @if(auth()->check())
-                        <li class="{{ Route::current() && str_contains(Route::current()->getName(), 'admin') ? 'active' : '' }}">
-                            <a href="{{ route('admin') }}">Admin</a></li>
-                        <li><a href="{{ route('logout') }}">Logout</a></li>
-                    @endif
-                </ul>
-            </div>
-        </nav>
-
-        <div class="container-fixed content">
-            <h1>@yield('title')</h1>
-            @yield('content')
+<div class="container container-main">
+    <nav class="navbar navbar-default">
+        <div>
+            <a href="{{ route('blog') }}">
+                <div class="logo pull-left"></div>
+            </a>
+            <ul class="nav navbar-nav pull-right">
+                <li class="{{ Route::current() && str_contains(Route::current()->getName(), 'blog')  ? 'active' : '' }}">
+                    <a href="{{ route('blog') }}">Blog</a></li>
+                <li class="{{ Route::current() && Route::current()->getName() === 'contact' ? 'active' : '' }}"><a
+                            href="{{ route('contact') }}">Contact</a></li>
+                @if(auth()->check())
+                    <li class="{{ Route::current() && str_contains(Route::current()->getName(), 'admin') ? 'active' : '' }}">
+                        <a href="{{ route('admin') }}">Admin</a></li>
+                    <li><a href="{{ route('logout') }}">Logout</a></li>
+                @endif
+            </ul>
         </div>
+    </nav>
 
-        <footer class="text-center text-muted">
-            &copy {{ \Carbon\Carbon::create()->format('Y') }} Three Oh Limited
-        </footer>
+    <div>
+        <h1>@yield('title')</h1>
+        @yield('content')
     </div>
+
+    <footer class="text-center text-muted">
+        &copy {{ \Carbon\Carbon::create()->format('Y') }} Three Oh Limited
+    </footer>
 </div>
 
 <script src="{{ elixir('js/app.js') }}" type="text/javascript"></script>
