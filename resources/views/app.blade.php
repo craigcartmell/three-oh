@@ -91,6 +91,8 @@
         @yield('content')
     </div>
 
+    <br>
+
     <footer class="text-center text-muted">
         &copy {{ \Carbon\Carbon::create()->format('Y') }} Three Oh Limited
     </footer>
