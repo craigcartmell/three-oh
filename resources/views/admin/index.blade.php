@@ -4,8 +4,9 @@
 
 @section('content')
     <a class="btn btn-primary" href="/admin/articles/new">Add New</a>
-    <table class="table table-responsive table-striped">
-        <thead>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
             <tr>
                 <th>Id</th>
                 <th>Title</th>
@@ -15,8 +16,8 @@
                 <th>Created</th>
                 <th colspan="3">Updated</th>
             </tr>
-        </thead>
-        <tbody>
+            </thead>
+            <tbody>
             @forelse($articles as $article)
                 <tr>
                     <td>{{$article->getKey()}}</td>
@@ -35,6 +36,7 @@
                     <td colspan="7">Nothing to see here.</td>
                 </tr>
             @endforelse
-        </tbody>
-    </table>
+            </tbody>
+        </table>
+    </div>
 @endsection
