@@ -11534,13 +11534,14 @@ $(function () {
         e.preventDefault();
 
         var url = $(this).data('url');
-        var type = $(this).data('type');
+        var shareType = $(this).data('share-type');
+        var shareUrl = $(this).data('share-url');
 
         if (typeof _gaq !== 'undefined') {
-            _gaq.push(['_trackEvent', 'Share', 'Blog', url]);
+            _gaq.push(['_trackEvent', url, 'Share', shareType]);
         }
 
-        popupwindow(url, '', 800, 800);
+        popupwindow(shareUrl, '', 800, 800);
     });
 
     $('.delete').on('click', function () {

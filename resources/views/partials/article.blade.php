@@ -39,24 +39,25 @@
                 </div>
 
                 <div class="pull-right">
-                    <a href="#" class="share" data-type="facebook"
-                       data-url="http://www.facebook.com/share.php?u={{ $article->url }}&title={{ $article->title }}"
+                    <a href="#" class="share" data-url="{{ $article->url }}" data-share-type="Facebook"
+                       data-share-url="http://www.facebook.com/share.php?u={{ $article->url }}&title={{ $article->title }}"
                        target="_blank" title="Share on Facebook">
                         <i class="fa fa-facebook-official"></i>
                     </a>
 
-                    <a href="#" class="share" data-type="twitter"
-                       data-url="https://twitter.com/intent/tweet?url={{ $article->url }}" title="Share on Twitter">
+                    <a href="#" class="share" data-url="{{ $article->url }}" data-share-type="Twitter"
+                       data-share-url="https://twitter.com/intent/tweet?url={{ $article->url }}"
+                       title="Share on Twitter">
                         <i class="fa fa-twitter"></i>
                     </a>
 
-                    <a href="#" class="share" data-type="google-plus"
-                       data-url="https://plus.google.com/share?url={{ $article->url }}" title="Share on Google+">
+                    <a href="#" class="share" data-url="{{ $article->url }}" data-share-type="Google+"
+                       data-share-url="https://plus.google.com/share?url={{ $article->url }}" title="Share on Google+">
                         <i class="fa fa-google-plus"></i>
                     </a>
 
-                    <a href="#" class="share" data-type="reddit"
-                       data-url="//www.reddit.com/submit?url={{ $article->url }}"
+                    <a href="#" class="share" data-url="{{ $article->url }}" data-share-type="Reddit"
+                       data-share-url="//www.reddit.com/submit?url={{ $article->url }}"
                        title="Share on Reddit">
                         <i class="fa fa-reddit"></i>
                     </a>
