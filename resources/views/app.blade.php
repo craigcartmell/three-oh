@@ -68,21 +68,32 @@
 
 <div class="container container-main">
     <nav class="navbar navbar-default">
-        <div>
-            <a href="{{ route('blog') }}">
-                <div class="logo pull-left"></div>
-            </a>
-            <ul class="nav navbar-nav pull-right">
-                <li class="{{ Route::current() && str_contains(Route::current()->getName(), 'blog')  ? 'active' : '' }}">
-                    <a href="{{ route('blog') }}">Blog</a></li>
-                <li class="{{ Route::current() && Route::current()->getName() === 'contact' ? 'active' : '' }}"><a
-                            href="{{ route('contact') }}">Contact</a></li>
-                @if(auth()->check())
-                    <li class="{{ Route::current() && str_contains(Route::current()->getName(), 'admin') ? 'active' : '' }}">
-                        <a href="{{ route('admin') }}">Admin</a></li>
-                    <li><a href="{{ route('logout') }}">Logout</a></li>
-                @endif
-            </ul>
+        <div class="container">
+            <div class="navbar-header">
+                <a href="{{ route('blog') }}">
+                    <div class="logo pull-left"></div>
+                </a>
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                        aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse pull-right">
+                <ul class="nav navbar-nav pull-right">
+                    <li class="{{ Route::current() && str_contains(Route::current()->getName(), 'blog')  ? 'active' : '' }}">
+                        <a href="{{ route('blog') }}">Blog</a></li>
+                    <li class="{{ Route::current() && Route::current()->getName() === 'contact' ? 'active' : '' }}"><a
+                                href="{{ route('contact') }}">Contact</a></li>
+                    @if(auth()->check())
+                        <li class="{{ Route::current() && str_contains(Route::current()->getName(), 'admin') ? 'active' : '' }}">
+                            <a href="{{ route('admin') }}">Admin</a></li>
+                        <li><a href="{{ route('logout') }}">Logout</a></li>
+                    @endif
+                </ul>
+            </div>
         </div>
     </nav>
 
@@ -95,7 +106,8 @@
 
     <footer class="text-center text-muted">
         <span>&copy {{ \Carbon\Carbon::create()->format('Y') }} Three Oh Limited</span>
-        <span><a href="https://twitter.com/three_oh_web" title="Follow @three_oh_web on Twitter"><i class="fa fa-twitter"></i></a></span>
+        <span><a href="https://twitter.com/three_oh_web" title="Follow @three_oh_web on Twitter"><i
+                        class="fa fa-twitter"></i></a></span>
     </footer>
 </div>
 
