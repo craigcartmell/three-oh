@@ -7,8 +7,10 @@
     <meta property="og:site_name" content="{{ env('APP_NAME') }}">
     <meta property="og:url" content="{{ $article->url }}">
     <meta property="og:description" content="{{ substr(strip_tags($article->body_parsed), 0, 200) }}">
-    <meta property="fb:app_id" content="{{ env('FACEBOOK_APP_ID') }}">
     <meta property="og:type" content="article">
+    <meta property="og:image" content="{{ asset('images/logo_short.png') }}">
+
+    <meta property="fb:app_id" content="{{ env('FACEBOOK_APP_ID') }}">
     <meta property="article:author" content="">
     <meta property="article:publisher" content="{{ url() }}">
 
@@ -17,6 +19,7 @@
     <meta name="twitter:title" content="{{ $article->title }}">
     <meta name="twitter:description" content="{{ substr(strip_tags($article->body_parsed), 0, 200) }}">
     <meta name="twitter:creator" content="{{ env('TWITTER_HANDLE') }}">
+    <meta name="twitter:image" content="{{ asset('images/logo_short.png') }}">
 @endsection
 
 @section('meta_keywords', $article->tags_delimited)
