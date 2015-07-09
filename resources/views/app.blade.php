@@ -27,7 +27,7 @@
 
     <link rel="stylesheet" href="{{ asset('css/prism.css') }}" type="text/css">
 
-    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script async src="https://www.google.com/recaptcha/api.js"></script>
 
     @if(app()->environment() === 'production')
         <script>
@@ -111,8 +111,8 @@
     </footer>
 </div>
 
-<script src="{{ elixir('js/app.js') }}" type="text/javascript"></script>
-<script src="{{ asset('js/prism.js') }}"></script>
+<script async src="{{ elixir('js/app.js') }}" type="text/javascript"></script>
+<script async src="{{ asset('js/prism.js') }}"></script>
 
 @yield('scripts')
 
